@@ -36,13 +36,13 @@ func main() {
 	}
 }
 
-func getPairCollection(users []string) (pairData PairCollection) {
+func getPairCollection(users []string) (pairCollection PairCollection) {
 	for {
 		pair := getPair(&users)
-		pairData.pairs = append(pairData.pairs, pair)
+		pairCollection.pairs = append(pairCollection.pairs, pair)
 
-		if len(pair.first) > pairData.firstColumnLength {
-			pairData.firstColumnLength = len(pair.first)
+		if len(pair.first) > pairCollection.firstColumnLength {
+			pairCollection.firstColumnLength = len(pair.first)
 		}
 
 		if pair.last {
